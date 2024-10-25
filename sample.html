@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slick Slider Responsive</title>
+  <!-- Slick CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+
+    .slider {
+      width: 80%;
+      margin: 100px auto;
+    }
+
+    .slider img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    /* Styling dots */
+    .slick-dots {
+      position: absolute;
+      bottom: -45px;
+    }
+
+    .slick-dots li button:before {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .slick-dots li.slick-active button:before {
+      color: #ff5733; /* Active dot color */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slider">
+    <div><img src="https://via.placeholder.com/800x400?text=Slide+1" alt="Slide 1"></div>
+    <div><img src="https://via.placeholder.com/800x400?text=Slide+2" alt="Slide 2"></div>
+    <div><img src="https://via.placeholder.com/800x400?text=Slide+3" alt="Slide 3"></div>
+    <div><img src="https://via.placeholder.com/800x400?text=Slide+4" alt="Slide 4"></div>
+    <div><img src="https://via.placeholder.com/800x400?text=Slide+5" alt="Slide 5"></div>
+  </div>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Slick JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $('.slider').slick({
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 3,
+        adaptiveHeight: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        responsive: [
+          {
+            breakpoint: 768, // When screen width is below 768px
+            settings: {
+              slidesToShow: 1 // Show only 1 slide
+            }
+          }
+        ]
+      });
+    });
+  </script>
+
+</body>
+</html>
